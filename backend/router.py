@@ -43,9 +43,8 @@ def detele_product_route(product_id: int, db: Session = Depends(get_db)):
 
 @router.put("/products/{product_id}", response_model=ProductResponse)
 def update_product_route(
-    product_id: int, product: ProductUpdate, db: Session = Depends(get_db)
-):
-    db_product = update_product(db, product_id=product_id, product=product)
+    product_id: int, product: ProductUpdate, db: Session = Depends(get_db)):
+    db_product = update_product(db=db, product_id=product_id, product=product)
     if db_product is None:
         raise HTTPException(status_code=404, detail="Product not found")
     return db_product
