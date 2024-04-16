@@ -1,7 +1,7 @@
 # Dockerfile-frontend
 
 # Imagem base
-FROM python:lastesd
+FROM python:latest
 
 # Definir o diretório de trabalho no container
 WORKDIR /app
